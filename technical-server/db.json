@@ -1,0 +1,89 @@
+{
+  "advisor": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john.doe@zoefin.com",
+      "phone": "123-456-7890",
+      "address": "123 Main St, San Francisco, CA 94101",
+      "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+      "income": 100000
+    },
+    {
+      "id": "2",
+      "name": "Jane Doe",
+      "email": "jane.doe@zoefin.com",
+      "phone": "123-456-7891",
+      "address": "123 Main St, San Francisco, CA 94101",
+      "avatar": "https://randomuser.me/api/portraits/women/1.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Michael Smith",
+      "email": "michael.smith@zoefin.com",
+      "phone": "123-456-7892",
+      "address": "456 Elm St, New York, NY 10001",
+      "avatar": "https://randomuser.me/api/portraits/men/2.jpg",
+      "income": 120000
+    },
+    {
+      "id": "4",
+      "name": "Emily Johnson",
+      "email": "emily.johnson@zoefin.com",
+      "phone": "123-456-7893",
+      "address": "789 Oak St, Chicago, IL 60601",
+      "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Robert Brown",
+      "email": "robert.brown@zoefin.com",
+      "phone": "123-456-7894",
+      "address": "321 Pine St, Austin, TX 73301",
+      "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
+      "income": 95000
+    },
+    {
+      "id": "6",
+      "name": "Jessica Davis",
+      "email": "jessica.davis@zoefin.com",
+      "phone": "123-456-7895",
+      "address": "654 Maple St, Seattle, WA 98101",
+      "avatar": "https://randomuser.me/api/portraits/women/3.jpg"
+    },
+    {
+      "id": "7",
+      "name": "David Martinez",
+      "email": "david.martinez@zoefin.com",
+      "phone": "123-456-7896",
+      "address": "987 Birch St, Miami, FL 33101",
+      "avatar": "https://randomuser.me/api/portraits/men/4.jpg",
+      "income": 110000
+    },
+    {
+      "id": "8",
+      "name": "Sarah Lee",
+      "email": "sarah.lee@zoefin.com",
+      "phone": "123-456-7897",
+      "address": "222 Cedar St, Los Angeles, CA 90001",
+      "avatar": "https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    {
+      "id": "9",
+      "name": "James Wilson",
+      "email": "james.wilson@zoefin.com",
+      "phone": "123-456-7898",
+      "address": "333 Spruce St, Boston, MA 02101",
+      "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+      "income": 105000
+    },
+    {
+      "id": "11",
+      "name": "Linda Garcia",
+      "email": "linda.garcia@zoefin.com",
+      "phone": "123-456-7899",
+      "address": "444 Ash St, Denver, CO 80201",
+      "avatar": "https://randomuser.me/api/portraits/women/5.jpg"
+    }
+  ]
+}
