@@ -7,15 +7,7 @@
       "phone": "123-456-7890",
       "address": "123 Main St, San Francisco, CA 94101",
       "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
-      "income": 100000
-    },
-    {
-      "id": "2",
-      "name": "Jane Doe",
-      "email": "jane.doe@zoefin.com",
-      "phone": "123-456-7891",
-      "address": "123 Main St, San Francisco, CA 94101",
-      "avatar": "https://randomuser.me/api/portraits/women/1.jpg"
+      "income": 10000
     },
     {
       "id": "3",
@@ -24,15 +16,7 @@
       "phone": "123-456-7892",
       "address": "456 Elm St, New York, NY 10001",
       "avatar": "https://randomuser.me/api/portraits/men/2.jpg",
-      "income": 120000
-    },
-    {
-      "id": "4",
-      "name": "Emily Johnson",
-      "email": "emily.johnson@zoefin.com",
-      "phone": "123-456-7893",
-      "address": "789 Oak St, Chicago, IL 60601",
-      "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
+      "income": 12000
     },
     {
       "id": "5",
@@ -44,29 +28,13 @@
       "income": 95000
     },
     {
-      "id": "6",
-      "name": "Jessica Davis",
-      "email": "jessica.davis@zoefin.com",
-      "phone": "123-456-7895",
-      "address": "654 Maple St, Seattle, WA 98101",
-      "avatar": "https://randomuser.me/api/portraits/women/3.jpg"
-    },
-    {
       "id": "7",
       "name": "David Martinez",
       "email": "david.martinez@zoefin.com",
       "phone": "123-456-7896",
       "address": "987 Birch St, Miami, FL 33101",
       "avatar": "https://randomuser.me/api/portraits/men/4.jpg",
-      "income": 110000
-    },
-    {
-      "id": "8",
-      "name": "Sarah Lee",
-      "email": "sarah.lee@zoefin.com",
-      "phone": "123-456-7897",
-      "address": "222 Cedar St, Los Angeles, CA 90001",
-      "avatar": "https://randomuser.me/api/portraits/women/4.jpg"
+      "income": 11000
     },
     {
       "id": "9",
@@ -75,15 +43,7 @@
       "phone": "123-456-7898",
       "address": "333 Spruce St, Boston, MA 02101",
       "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
-      "income": 105000
-    },
-    {
-      "id": "11",
-      "name": "Linda Garcia",
-      "email": "linda.garcia@zoefin.com",
-      "phone": "123-456-7899",
-      "address": "444 Ash St, Denver, CO 80201",
-      "avatar": "https://randomuser.me/api/portraits/women/5.jpg"
+      "income": 10500
     },
     {
       "id": "bca8",
@@ -96,21 +56,76 @@
     },
     {
       "id": "3718",
-      "name": "test",
+      "name": "mav1",
       "avatar": "",
       "email": "john.doe@zoefin.com",
       "phone": "123-456-7890",
       "address": "123 Main St, San Francisco, CA 94101",
-      "income": "12345"
+      "income": "15100"
     },
     {
       "id": "74a3",
-      "name": "test",
+      "name": "mav12",
       "avatar": null,
       "email": "john.doe@zoefin.com",
       "phone": "123-456-7890",
       "address": "123 Main St, San Francisco, CA 94101",
-      "income": "12345"
+      "income": "15200"
+    },
+    {
+      "id": "5489",
+      "name": "mav123",
+      "avatar": null,
+      "email": "john.doe@zoefin.com",
+      "phone": "123-456-7890",
+      "address": "123 Main St, San Francisco, CA 94101",
+      "income": "15300"
+    },
+    {
+      "id": "5490",
+      "name": "mav211",
+      "avatar": null,
+      "email": "john.doe@zoefin.com",
+      "phone": "123-456-7890",
+      "address": "123 Main St, San Francisco, CA 94101",
+      "income": "15400"
+    },
+    {
+      "id": "5491",
+      "name": "mav212",
+      "avatar": null,
+      "email": "john.doe@zoefin.com",
+      "phone": "123-456-7890",
+      "address": "123 Main St, San Francisco, CA 94101",
+      "income": "15500"
+    },
+    {
+      "id": "5192",
+      "name": "mav221",
+      "avatar": null,
+      "email": "john.doe@zoefin.com",
+      "phone": "123-456-7890",
+      "address": "123 Main St, San Francisco, CA 94101",
+      "income": "15600"
+    },
+    {
+      "id": "5193",
+      "name": "mav222",
+      "avatar": null,
+      "email": "john.doe@zoefin.com",
+      "phone": "123-456-7890",
+      "address": "123 Main St, San Francisco, CA 94101",
+      "income": "15700"
+    },
+    {
+      "id": "5194",
+      "name": "mav322",
+      "avatar": null,
+      "email": "john.doe@zoefin.com",
+      "phone": "123-456-7890",
+      "address": "123 Main St, San Francisco, CA 94101",
+      "income": "15800"
     }
+
   ]
 }

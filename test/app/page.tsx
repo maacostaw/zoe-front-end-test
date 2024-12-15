@@ -7,6 +7,7 @@ export default function Home() {
 
   const router = useRouter()
 
+  /**States to handle the input field logic */
   const [incomeValue, setIncomeValue] = useState("")
   const [incomeError, setIncomeError] = useState(true)
 
@@ -37,6 +38,11 @@ export default function Home() {
               id="incomeInput"
               value={incomeValue}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setIncomeValue(e.target.value)}
+              onKeyDown={(event)=>{
+                if (event.key === "Enter" && !incomeError && incomeValue !== "") {
+                  router.push(`/advisors?income=${incomeValue}&sortingParameter=id&reverseSorting=false&page=1`)
+                }
+              }}
             />
           </div>
           <p className={`messageError ${(incomeError && incomeValue !== "") ? "visible" : "hidden"}`}>
@@ -46,8 +52,8 @@ export default function Home() {
         <button
           className={(!incomeError && incomeValue !== "") ? "primaryButton" : "primaryButton primaryButtonDisabled"}
           onClick={() => {
-            if (!incomeError) {
-              router.push(`/advisors?income=${incomeValue}`)
+            if (!incomeError && incomeValue !== "") {
+              router.push(`/advisors?income=${incomeValue}&sortingParameter=id&reverseSorting=false&page=1`)
             }
           }}
         >
