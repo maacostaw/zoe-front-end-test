@@ -1,0 +1,41 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./styles/components/advisorForm.module.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+.advisorForm_backgroundLayer__8127i {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(133, 133, 133, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.advisorForm_formContainer__Em1qF {
+    background-color: white;
+    width: 550px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.advisorForm_prefixBox__GLqK3 {
+    display: flex;
+    align-items: center;
+    border: 1px solid #a0a0a0;
+    border-radius: 4px;
+}
+
+.advisorForm_prefixBoxInput__8_bZl {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.advisorForm_prefixBox__GLqK3:focus-within {
+    border-color: #4f7df3;
+}

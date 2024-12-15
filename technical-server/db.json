@@ -84,6 +84,33 @@
       "phone": "123-456-7899",
       "address": "444 Ash St, Denver, CO 80201",
       "avatar": "https://randomuser.me/api/portraits/women/5.jpg"
+    },
+    {
+      "id": "bca8",
+      "name": "Miguel ",
+      "avatar": null,
+      "email": "john.doe@zoefin.com",
+      "phone": "123-456-7890",
+      "address": "123 Main St, San Francisco, CA 94101",
+      "income": "12345"
+    },
+    {
+      "id": "3718",
+      "name": "test",
+      "avatar": "",
+      "email": "john.doe@zoefin.com",
+      "phone": "123-456-7890",
+      "address": "123 Main St, San Francisco, CA 94101",
+      "income": "12345"
+    },
+    {
+      "id": "74a3",
+      "name": "test",
+      "avatar": null,
+      "email": "john.doe@zoefin.com",
+      "phone": "123-456-7890",
+      "address": "123 Main St, San Francisco, CA 94101",
+      "income": "12345"
     }
   ]
 }

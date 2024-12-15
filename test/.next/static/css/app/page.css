@@ -1,0 +1,33 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./styles/app/page.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+.page_pageLayout__w5Bo_ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.page_container__LWC_m {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px
+}
+
+.page_infoContainer__ZBwsp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px
+}
+
+.page_incomeInputContainer__Z_jGl{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap:7px
+}

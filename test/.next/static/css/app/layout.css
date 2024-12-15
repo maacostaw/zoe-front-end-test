@@ -1,0 +1,73 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./styles/globals.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+* {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/*Styles for error messages*/
+.messageError {
+    background-color:rgba(255,0,0,0.3);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.visible {
+    visibility: "visible";
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    visibility: "hidden";
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/*Styles for input boxes with a prefix*/
+.prefixBox {
+    display: flex;
+    border: 1px solid #a0a0a0;
+    border-radius: 4px;
+    padding: 3.5px 7px;
+    gap: 3.5px
+}
+
+.prefixBoxInput {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: medium;
+    padding: 0;
+}
+
+.prefixBox:focus-within {
+    border-color: #4f7df3;
+}
+
+/*Styles for buttons*/
+.primaryButton {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(83,115,227,1);
+    border: 0;
+    padding: 7px 14px;
+    border-radius: 5px;
+    color:white;
+}
+
+.primaryButtonDisabled{
+    background-color: rgba(133,133,133,1);
+    color:black;
+}
+
+.primaryButton:hover {
+    cursor:pointer
+}
+
+.primaryButtonDisabled:hover{
+    cursor:not-allowed
+}
+
+

@@ -1,0 +1,30 @@
+.pageLayout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px
+}
+
+.incomeInputContainer{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap:7px
+}
