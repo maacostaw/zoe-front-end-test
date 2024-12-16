@@ -182,14 +182,22 @@ export default function Page() {
               <div
                 style={{ fontWeight: sortingParameter === "name" ? "900" : "500", padding: "7px 0px 7px 14px" }}
                 className={styles.tableColumn}
-                onClick={() => goToRouteFilter("name")}
+                onClick={() => {
+                  if(debouncedSearch === "" && search === "") {
+                    goToRouteFilter("name")
+                  }
+                }}
               >
                 Advisor Name {sortingParameter === "name" ? (reverseSorting ? "⇑" : "⇓") : "⇕"}
               </div>
               <div
                 style={{ fontWeight: sortingParameter === "income" ? "900" : "500", padding: "7px 14px 7px 0px" }}
                 className={styles.tableColumn}
-                onClick={() => goToRouteFilter("income")}
+                onClick={() => {
+                  if(debouncedSearch === "" && search === "") {
+                    goToRouteFilter("income")
+                  }
+                }}
               >
                 Income {sortingParameter === "income" ? (reverseSorting ? "⇑" : "⇓") : "⇕"}
               </div>
@@ -243,7 +251,7 @@ export default function Page() {
             </div>
           ) :
             <p style={{ display: "flex", justifyContent: "center", color:"grey" }}>
-              {isWaiting ? "Waiting for you to stop typing" : "You need to empty the search name input in order to reactivate navigation"}
+              {isWaiting ? "Waiting for you to stop typing" : "You need to empty the search name input in order to reactivate navigation and filters"}
             </p>
           }
         </div>
