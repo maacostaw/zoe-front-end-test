@@ -46,7 +46,7 @@ export default function Home() {
             />
           </div>
           <p className={`messageError ${(incomeError && incomeValue !== "") ? "visible" : "hidden"}`}>
-            Ingresa un numero de cinco digitos
+            Type a five digit number
           </p>
         </div>
         <button

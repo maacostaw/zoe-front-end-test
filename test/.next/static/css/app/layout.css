@@ -70,4 +70,52 @@
     cursor:not-allowed
 }
 
+.secondaryButton {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid rgba(83,115,227,1);
+    padding: 7px 14px;
+    border-radius: 5px;
+    color:rgba(83,115,227,1);
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.secondaryButtonDisabled{
+}
+
+.secondaryButton:hover {
+    cursor:pointer;
+    background-color: rgba(83,115,227,1);
+    color: white;
+}
+
+.secondaryButtonDisabled:hover{
+    cursor:not-allowed
+}
+
+.primaryDangerButton {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid rgba(255,0,0,0.4);
+    padding: 7px 14px;
+    border-radius: 5px;
+    color:rgba(255,0,0,0.4);
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.primaryDangerButtonDisabled{
+
+}
+
+.primaryDangerButton:hover {
+    cursor:pointer;
+    background-color: rgba(255,0,0,0.8);
+    color: white;
+}
+
+.primaryDangerButtonButtonDisabled:hover{
+    cursor:not-allowed
+}
 

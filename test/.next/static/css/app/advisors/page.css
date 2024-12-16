@@ -3,9 +3,9 @@
   \************************************************************************************************************************************************************************************************************************************************************************************/
 .advisorForm_backgroundLayer__8127i {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(133, 133, 133, 0.6);
+    min-height: 100vh;
+    height: 100%;
+    background-color: rgba(191, 198, 221, 0.75);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +13,7 @@
     bottom: 0;
     right: 0;
     left: 0;
+    z-index: 1;
 }
 
 .advisorForm_formContainer__Em1qF {
@@ -21,7 +22,72 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    gap: 28px;
+    padding: 14px 0;
 }
+
+.advisorForm_formContainerTop__HKa2d {
+    border-bottom: 1px solid rgba(133,133,133,1);
+    padding:0 14px 14px 14px;
+}
+
+.advisorForm_formContainerMiddle__f8Xdn {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0px 28px;
+}
+
+.advisorForm_imageSection__XFzpD{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:14px
+}
+
+.advisorForm_profilePhoto__PnwUB{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+}
+
+.advisorForm_fieldsContainer__XyjMY{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .advisorForm_fieldsContainer__XyjMY{
+        flex-direction: row;
+        gap: 28px;
+    }
+}
+
+.advisorForm_fieldContainer__LkI_s{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap:7px;
+}
+
+@media (min-width: 768px) {
+    .advisorForm_fieldContainer__LkI_s{
+        width: 50%;
+    }
+}
+
+.advisorForm_formContainerBottom__jTkwE {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 21px;
+    border-top: 1px solid rgba(133,133,133,1);
+    padding:14px 14px 0 14px;
+}
+
+
 /*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./styles/app/advisors/page.module.css ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************/
@@ -35,6 +101,7 @@
     margin: 0;
     padding:35px;
     gap:35px;
+    position: relative;
 }
 
 @media (min-width: 768px) {

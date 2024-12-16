@@ -1,8 +1,8 @@
 .backgroundLayer {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(133, 133, 133, 0.6);
+    min-height: 100vh;
+    height: 100%;
+    background-color: rgba(191, 198, 221, 0.75);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,6 +10,7 @@
     bottom: 0;
     right: 0;
     left: 0;
+    z-index: 1;
 }
 
 .formContainer {
@@ -18,4 +19,68 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    gap: 28px;
+    padding: 14px 0;
 }
+
+.formContainerTop {
+    border-bottom: 1px solid rgba(133,133,133,1);
+    padding:0 14px 14px 14px;
+}
+
+.formContainerMiddle {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0px 28px;
+}
+
+.imageSection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:14px
+}
+
+.profilePhoto{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+}
+
+.fieldsContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .fieldsContainer{
+        flex-direction: row;
+        gap: 28px;
+    }
+}
+
+.fieldContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap:7px;
+}
+
+@media (min-width: 768px) {
+    .fieldContainer{
+        width: 50%;
+    }
+}
+
+.formContainerBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 21px;
+    border-top: 1px solid rgba(133,133,133,1);
+    padding:14px 14px 0 14px;
+}
+
