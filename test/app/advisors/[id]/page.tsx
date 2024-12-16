@@ -4,11 +4,14 @@ import AdvisorForm from '@/components/advisorForm';
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+import styles from "../../../styles/app/advisors/[id]/page.module.css";
+
 const AdvisorPage = () => {
   const { id } = useParams(); // Accede al parámetro 'id' de la ruta
   const router = useRouter()
 
-  const [advisor, setAdvisor] = useState({
+  /**Empty advisor for the initial state */
+  const emptyAdvisor = {
     "id": "",
     "name": "",
     "avatar": null,
@@ -16,15 +19,17 @@ const AdvisorPage = () => {
     "phone": "",
     "address": "",
     "income": ""
-  })
+  }
+  const [advisor, setAdvisor] = useState(emptyAdvisor)
 
   const [modalEditVisible, setModalEditVisible] = useState(false)
-
+  
 
   useEffect(() => {
     fetch(`http://localhost:3001/advisor/${id}`)
       .then(data => data.json())
       .then(dataJson => {
+
         setAdvisor(dataJson)
       })
   }, [])
@@ -73,20 +78,50 @@ const AdvisorPage = () => {
 
 
   return (
-    <>
-      <AdvisorForm visible={modalEditVisible} setVisible={setModalEditVisible} advisor={advisor} onSubmit={onSubmit}/>
-      <div>
-        <img src={advisor ? advisor.avatar : null} style={{ width: "100px" }} />
-        <button onClick={() => handleDelete()}>Delete</button>
-        <button onClick={() => setModalEditVisible(true)}>Edit Advisor</button>
+    <div className={styles.pageLayout}>
+      <AdvisorForm
+        visible={modalEditVisible}
+        setVisible={setModalEditVisible}
+        advisor={advisor}
+        onSubmit={onSubmit}
+      />
+      <div className={styles.logoContainer}>
+        <img src="/zoe_logo.svg" width="100px" style={{ cursor: "pointer" }} onClick={() => router.push("/")} />
       </div>
-      <div>{advisor && <>{advisor.name}</>}</div>
-      <div><b>ID Number</b>ID: 987-345-32</div>
-      <div><b>Income</b>{advisor && <>{advisor.income}</>}</div>
-      <div><b>Education</b>Northeastern University</div>
-      <div><b>Title</b>Financial Management</div>
-      <div><b>Years of Experience</b>+10</div>
-    </>
+      <div className={styles.imageSection}>
+        <img
+          className={styles.profilePhoto}
+          src={advisor.avatar ? advisor.avatar : "/empty_profile_photo.png"}
+        />
+        <div style={{ display: "flex", gap: "21px" }}>
+          <button className="primaryDangerButton" onClick={() => handleDelete()}>Delete</button>
+          <button className="secondaryButton" onClick={() => setModalEditVisible(true)}>Edit Advisor</button>
+        </div>
+      </div>
+      <div className={styles.infoSection}>
+        <h1 className={styles.infoHeader} >{advisor && <>{advisor.name}</>}</h1>
+        <div className={styles.infoField}>
+          <b>ID Number</b>
+          <p style={{ color: "rgba(133,133,133,1)" }}>ID: 987-345-32</p>
+        </div>
+        <div className={styles.infoField}>
+          <b>Income</b>
+          <p style={{ color: "rgba(133,133,133,1)" }}>{advisor && <>{advisor.income}</>}</p>
+        </div>
+        <div className={styles.infoField}>
+          <b>Education</b>
+          <p style={{ color: "rgba(133,133,133,1)" }}>Northeastern University</p>
+        </div>
+        <div className={styles.infoField}>
+          <b>Title</b>
+          <p style={{ color: "rgba(133,133,133,1)" }}>Financial Management</p>
+        </div>
+        <div className={styles.infoField}>
+          <b>Years of Experience</b>
+          <p style={{ color: "rgba(133,133,133,1)" }}>+10</p>
+        </div>
+      </div>
+    </div>
   );
 };
 

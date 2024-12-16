@@ -1,0 +1,68 @@
+.pageLayout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 35px;
+    gap: 35px;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .pageLayout {
+        align-items: start;
+        justify-content: start;
+    }
+}
+
+.logoContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .logoContainer {
+        align-items: start;
+        justify-content: start;
+    }
+}
+
+.imageSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    width: 100%;
+}
+
+.profilePhoto {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+}
+
+.infoSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap:14px
+}
+
+.infoHeader {
+    border-bottom: 1px solid rgba(133, 133, 133, 1);
+    padding-bottom: 14px;
+    max-width: 780px;
+    width: 100%;
+}
+
+.infoField {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 780px;
+}

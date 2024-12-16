@@ -108,7 +108,7 @@ const AdvisorForm = (
                         <div className={styles.imageSection}>
                             <img
                                 className={styles.profilePhoto}
-                                src={imageBase64 ? imageBase64 : "empty_profile_photo.png"}
+                                src={imageBase64 ? imageBase64 : "/empty_profile_photo.png"}
                             />
                             <input
                                 type="file"

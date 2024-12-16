@@ -88,3 +88,74 @@
 }
 
 
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./styles/app/advisors/[id]/page.module.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+.page_pageLayout__2Ri1g {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 35px;
+    gap: 35px;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .page_pageLayout__2Ri1g {
+        align-items: start;
+        justify-content: start;
+    }
+}
+
+.page_logoContainer__Qyewn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .page_logoContainer__Qyewn {
+        align-items: start;
+        justify-content: start;
+    }
+}
+
+.page_imageSection__2vmbG {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    width: 100%;
+}
+
+.page_profilePhoto__ga854 {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+}
+
+.page_infoSection__Y4_uz {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap:14px
+}
+
+.page_infoHeader__WpaqK {
+    border-bottom: 1px solid rgba(133, 133, 133, 1);
+    padding-bottom: 14px;
+    max-width: 780px;
+    width: 100%;
+}
+
+.page_infoField__iA2G8 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 780px;
+}
