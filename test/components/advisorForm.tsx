@@ -144,7 +144,7 @@ const AdvisorForm = (
                                     />
                                 </div>
                                 <p className={`messageError ${(firstNameError) ? "visible" : "hidden"}`}>
-                                    Type advisor's name
+                                    Type advisor's first name
                                 </p>
                             </div>
                             <div className={styles.fieldContainer}>

@@ -113,7 +113,7 @@ export default function Page() {
         onSubmit={onSubmit}
       />
       <div className={styles.logoContainer}>
-        <img src="/zoe_logo.svg" width="100px" style={{cursor:"pointer"}} onClick={()=>router.push("/")}/>
+        <img src="/zoe_logo.svg" width="100px" style={{ cursor: "pointer" }} onClick={() => router.push("/")} />
       </div>
       <div className={styles.container}>
         <div className={styles.header}>
@@ -144,6 +144,12 @@ export default function Page() {
                 Income {sortingParameter === "income" ? (reverseSorting ? "⇑" : "⇓") : "⇕"}
               </div>
             </div>
+            {advisors.length === 0 &&
+              <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+                <img src="/no_data_found.jpg" style={{width:"400px"}}/>
+                <p>No available Advisors based on the provided income. Please try a different income value..</p>
+              </div>
+            }
             {advisors.map((advisor, index) => {
               if (index >= ((parseInt(page) - 1) * 10) && index < (parseInt(page) * 10)) {
                 return (
@@ -174,7 +180,7 @@ export default function Page() {
             <h2
               className={styles.tableFooterArrow}
               style={{ visibility: parseInt(page) > 1 ? "visible" : "hidden" }}
-              onClick={()=>goToRoutePage(parseInt(page)-1)}
+              onClick={() => goToRoutePage(parseInt(page) - 1)}
             >
               {"<"}
             </h2>
@@ -182,7 +188,7 @@ export default function Page() {
             <h2
               className={styles.tableFooterArrow}
               style={{ visibility: ((parseInt(page) - 1) * 10) < (advisors.length - advisors.length % 10) ? "visible" : "hidden" }}
-              onClick={()=>goToRoutePage(parseInt(page)+1)}
+              onClick={() => goToRoutePage(parseInt(page) + 1)}
             >
               {">"}
             </h2>
