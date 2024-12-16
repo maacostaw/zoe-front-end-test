@@ -1,7 +1,7 @@
 "use client"
 import AdvisorForm from "@/components/advisorForm"
 import { useSearchParams, useRouter } from "next/navigation"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 import styles from "../../styles/app/advisors/page.module.css";
 
@@ -82,6 +82,46 @@ export default function Page() {
       })
   }, [])
 
+  /*We are going to have an state for the text box*/
+  const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
+  const [isWaiting, setIsWaiting] = useState(false);
+
+  /**Here we are going to wait a few seconds and set up the search */
+  useEffect(() => {
+    setIsWaiting(true);
+    const timer = setTimeout(() => {
+      setDebouncedSearch(search);
+      setIsWaiting(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [search])
+
+  /**Then the search is going to filter the names */
+  useEffect(()=>{
+    if(debouncedSearch === "") {
+      const filteredAdvisors = advisors.filter((advisor: Advisor, index: number) => {
+        return (index >= ((parseInt(page) - 1) * 10) && index < (parseInt(page) * 10))
+      })
+      setVisibleAdvisors(filteredAdvisors)
+    } else {
+      const filteredAdvisors = advisors.filter((advisor: Advisor) => {
+        return advisor.name!.toLowerCase().startsWith(debouncedSearch.toLowerCase())
+      })
+      setVisibleAdvisors(filteredAdvisors)
+    }
+  },[debouncedSearch])
+
+  /**We are going to have a state that only shows the data we want */
+  const [visibleAdvisors, setVisibleAdvisors] = useState<Advisor[]>([])
+
+  useEffect(() => {
+    const filteredAdvisors = advisors.filter((advisor: Advisor, index: number) => {
+      return (index >= ((parseInt(page) - 1) * 10) && index < (parseInt(page) * 10))
+    })
+    setVisibleAdvisors(filteredAdvisors)
+  }, [advisors])
+
   /**Function to call the api and create an advisor */
   const onSubmit = async (data: any) => {
     const url = 'http://localhost:3001/advisor';
@@ -125,7 +165,17 @@ export default function Page() {
         <div className={styles.table}>
           <div className={styles.tableHeader}>
             <h2>Advisors found</h2>
-            <input></input>
+            <div className="prefixBox">
+              <input
+                type="text"
+                placeholder="Search for a name!"
+                className="prefixBoxInput"
+                id="searchedName"
+                value={search}
+                onChange={(e) => { setSearch(e.target.value) }}
+              />
+            </div>
+
           </div>
           <div>
             <div className={styles.tableRow} style={{ backgroundColor: "rgba(0,0,0,0.25)", padding: "0" }}>
@@ -145,54 +195,57 @@ export default function Page() {
               </div>
             </div>
             {advisors.length === 0 &&
-              <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-                <img src="/no_data_found.jpg" style={{width:"400px"}}/>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <img src="/no_data_found.jpg" style={{ width: "400px" }} />
                 <p>No available Advisors based on the provided income. Please try a different income value..</p>
               </div>
             }
-            {advisors.map((advisor, index) => {
-              if (index >= ((parseInt(page) - 1) * 10) && index < (parseInt(page) * 10)) {
-                return (
-                  <div key={index} className={styles.tableRow} title="See advisor Details">
-                    <div
-                      className={styles.tableColumn}
-                      onClick={() => router.push(`/advisors/${advisor.id}`)}
-                    >
-                      {advisor.name}
-                    </div>
-                    <div
-                      className={styles.tableColumn}
-                      onClick={() => router.push(`/advisors/${advisor.id}`)}
-                    >
-                      $ {advisor.income}
-                    </div>
+            {visibleAdvisors.map((advisor, index) => {
+              return (
+                <div key={index} className={styles.tableRow} title="See advisor Details">
+                  <div
+                    className={styles.tableColumn}
+                    onClick={() => router.push(`/advisors/${advisor.id}`)}
+                  >
+                    {advisor.name}
                   </div>
-                )
-              } else {
-
-              }
+                  <div
+                    className={styles.tableColumn}
+                    onClick={() => router.push(`/advisors/${advisor.id}`)}
+                  >
+                    $ {advisor.income}
+                  </div>
+                </div>
+              )
             })}
           </div>
-          <div className={styles.tableFooter}>
-            <p className={styles.tableFooterSpan}>
-              {advisors.length === advisors.length % 10 + (parseInt(page) - 1) * 10 ? advisors.length : parseInt(page) * 10} of {advisors.length} Advisors
+          {search === "" ? (
+            <div className={styles.tableFooter}>
+
+              <p className={styles.tableFooterSpan}>
+                {advisors.length === advisors.length % 10 + (parseInt(page) - 1) * 10 ? advisors.length : parseInt(page) * 10} of {advisors.length} Advisors
+              </p>
+              <h2
+                className={styles.tableFooterArrow}
+                style={{ visibility: parseInt(page) > 1 ? "visible" : "hidden" }}
+                onClick={() => goToRoutePage(parseInt(page) - 1)}
+              >
+                {"<"}
+              </h2>
+              <h2 className={styles.tableFooterNumber}>{page}</h2>
+              <h2
+                className={styles.tableFooterArrow}
+                style={{ visibility: ((parseInt(page) - 1) * 10) < (advisors.length - advisors.length % 10) ? "visible" : "hidden" }}
+                onClick={() => goToRoutePage(parseInt(page) + 1)}
+              >
+                {">"}
+              </h2>
+            </div>
+          ) :
+            <p style={{ display: "flex", justifyContent: "center", color:"grey" }}>
+              {isWaiting ? "Waiting for you to stop typing" : "You need to empty the search name input in order to reactivate navigation"}
             </p>
-            <h2
-              className={styles.tableFooterArrow}
-              style={{ visibility: parseInt(page) > 1 ? "visible" : "hidden" }}
-              onClick={() => goToRoutePage(parseInt(page) - 1)}
-            >
-              {"<"}
-            </h2>
-            <h2 className={styles.tableFooterNumber}>{page}</h2>
-            <h2
-              className={styles.tableFooterArrow}
-              style={{ visibility: ((parseInt(page) - 1) * 10) < (advisors.length - advisors.length % 10) ? "visible" : "hidden" }}
-              onClick={() => goToRoutePage(parseInt(page) + 1)}
-            >
-              {">"}
-            </h2>
-          </div>
+          }
         </div>
       </div>
     </div>

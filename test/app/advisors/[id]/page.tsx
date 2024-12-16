@@ -7,8 +7,11 @@ import { useEffect, useState } from 'react';
 import styles from "../../../styles/app/advisors/[id]/page.module.css";
 
 const AdvisorPage = () => {
-  const { id } = useParams(); // Accede al parámetro 'id' de la ruta
+
   const router = useRouter()
+
+  /*Id parameter of the route*/
+  const { id } = useParams();
 
   /**Empty advisor for the initial state */
   const emptyAdvisor = {
@@ -22,9 +25,10 @@ const AdvisorPage = () => {
   }
   const [advisor, setAdvisor] = useState(emptyAdvisor)
 
+  /**State to handle the modal */
   const [modalEditVisible, setModalEditVisible] = useState(false)
   
-
+  /**Initial state to retrieve advisor data */
   useEffect(() => {
     fetch(`http://localhost:3001/advisor/${id}`)
       .then(data => data.json())
@@ -34,6 +38,7 @@ const AdvisorPage = () => {
       })
   }, [])
 
+  /**Function to delete the advisor */
   const handleDelete = async () => {
     try {
       const response = await fetch(`http://localhost:3001/advisor/${id}`, {
@@ -54,16 +59,17 @@ const AdvisorPage = () => {
     }
   }
 
+  /**Function that calls the api for an update */
   const onSubmit = async (data: any) => {
-    const url = `http://localhost:3001/advisor/${id}`; // URL de la API o endpoint
+    const url = `http://localhost:3001/advisor/${id}`;
 
     try {
       const response = await fetch(url, {
-        method: 'PUT', // Método PUT
+        method: 'PUT',
         headers: {
-          'Content-Type': 'application/json', // Asegura que el contenido se envíe como JSON
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data), // Convierte el objeto `data` en una cadena JSON
+        body: JSON.stringify(data),
       });
 
       if (!response.ok) {
@@ -75,7 +81,6 @@ const AdvisorPage = () => {
       console.error('Error:', error);
     }
   }
-
 
   return (
     <div className={styles.pageLayout}>

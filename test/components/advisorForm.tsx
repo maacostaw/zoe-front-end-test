@@ -81,7 +81,7 @@ const AdvisorForm = (
 
     /**Review if the income change follows the rules */
     useEffect(() => {
-        if (income.length !== 5) {
+        if ((income + "").length !== 5) {
             setIncomeError(true)
         } else {
             setIncomeError(false)
